@@ -1,1 +1,485 @@
-Fix dates: correct April→May, sort chronologically
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archives — Koch Capital</title>
+  <meta name="description" content="Frontier-first commentary from Koch Capital. AI, Minerals, Aerospace, Defense-Tech, Energy, Sports.">
+
+  <meta property="og:title" content="Archives — Koch Capital">
+  <meta property="og:description" content="Frontier-first commentary on AI, Minerals, Aerospace, Defense-Tech, Energy, and Sports.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://archives.kochcapital.io">
+  <meta property="og:image" content="https://archives.kochcapital.io/assets/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body { background: #fff; color: #000; }
+
+    .landing-page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 80px 32px 96px;
+    }
+
+    .landing-hero { text-align: center; }
+
+    .landing-logo {
+      width: 72px;
+      height: auto;
+      margin: 0 auto 40px;
+      display: block;
+    }
+
+    .landing-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(56px, 9vw, 96px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      margin: 0 0 20px;
+      color: #000;
+    }
+
+    .landing-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #888;
+      margin: 0 0 56px;
+    }
+
+    .landing-sectors {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 22px 0;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      margin-bottom: 72px;
+    }
+
+    .landing-list { list-style: none; padding: 0; margin: 0; }
+
+    .landing-list-item { border-bottom: 1px solid #e5e5e5; }
+    .landing-list-item:first-child { border-top: 1px solid #e5e5e5; }
+
+    .landing-list-item a {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 26px 0;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s ease, padding-left 0.15s ease;
+    }
+
+    .landing-list-item a:hover {
+      opacity: 0.6;
+      padding-left: 8px;
+    }
+
+    .landing-list-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      flex-shrink: 0;
+      width: 140px;
+      padding-top: 4px;
+    }
+
+    .landing-list-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .landing-list-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #000;
+      margin: 0 0 8px;
+    }
+
+    .landing-list-summary {
+      font-family: 'Archivo', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #444;
+      margin: 0;
+      letter-spacing: -0.002em;
+    }
+
+    .landing-footer {
+      margin-top: 96px;
+      padding-top: 40px;
+      border-top: 1px solid #000;
+      text-align: center;
+    }
+
+    .landing-footer a {
+      font-family: 'Archivo', sans-serif;
+      font-size: 14px;
+      color: #000;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .landing-disclaimer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-top: 28px;
+      line-height: 1.9;
+    }
+
+    @media (max-width: 640px) {
+      .landing-page { padding: 48px 20px 64px; }
+      .landing-logo { width: 56px; margin-bottom: 28px; }
+      .landing-tagline { font-size: 10px; letter-spacing: 0.25em; margin-bottom: 40px; }
+      .landing-sectors { font-size: 10px; letter-spacing: 0.15em; gap: 14px; padding: 16px 0; margin-bottom: 48px; }
+      .landing-list-item a { flex-direction: column; gap: 6px; padding: 22px 0; }
+      .landing-list-item a:hover { padding-left: 0; }
+      .landing-list-date { width: auto; font-size: 10px; padding-top: 0; }
+      .landing-list-title { font-size: 18px; margin-bottom: 6px; }
+      .landing-list-summary { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-page">
+
+    <header class="landing-hero">
+      <img src="assets/logo.png" alt="Koch Capital" class="landing-logo">
+      <h1 class="landing-title">ARCHIVES.</h1>
+      <p class="landing-tagline">Frontier-first commentary</p>
+    </header>
+
+    <div class="landing-sectors">
+      <span>AI</span>
+      <span>MINERALS</span>
+      <span>AEROSPACE</span>
+      <span>DEFENSE-TECH</span>
+      <span>ENERGY</span>
+      <span>SPORTS</span>
+    </div>
+
+    <!-- =========================================================
+         POST LIST — newest first
+         To add a new post: copy any <li> block, paste it at the
+         TOP of this list, edit the date, slug, title, and summary.
+         ========================================================= -->
+    <main>
+      <ul class="landing-list">
+
+        <li class="landing-list-item">
+          <a href="posts/orbit.html">
+            <span class="landing-list-date">May 13, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Orbit.</h2>
+              <p class="landing-list-summary">Google and SpaceX in advanced talks for orbital data centers, ahead of SpaceX's $1.75T IPO. The future of the data center.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/crusoe.html">
+            <span class="landing-list-date">May 13, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Crusoe.</h2>
+              <p class="landing-list-summary">Crusoe's rise as the leading energy-first AI infrastructure operator: $10B valuation, 45 GW pipeline, customers including OpenAI Stargate and Microsoft.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/peak.html">
+            <span class="landing-list-date">May 12, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Peak.</h2>
+              <p class="landing-list-summary">Cerebras IPO frenzy: $48.8B valuation, 20× oversubscribed, pricing May 13. The third post in the market-tension trilogy.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/palantir.html">
+            <span class="landing-list-date">May 12, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Palantir.</h2>
+              <p class="landing-list-summary">Palantir Q1 2026 print: $1.63B revenue (+85% YoY), $870M net income, Rule of 40 at 145. The strongest quarter since IPO.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/perplexity.html">
+            <span class="landing-list-date">May 12, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Perplexity.</h2>
+              <p class="landing-list-summary">Perplexity's shift from search engine to interface layer. $20B valuation, $450M ARR, 45M MAU, plus a $34.5B standing bid for Chrome.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/the-big-short-2.html">
+            <span class="landing-list-date">May 11, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">The Big Short 2.0.</h2>
+              <p class="landing-list-summary">Burry returns with a $1.1B short position and a Substack post comparing today to March 2000.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/new-highs.html">
+            <span class="landing-list-date">May 11, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">New Highs.</h2>
+              <p class="landing-list-summary">S&P 500 +10.49% in April, but five stocks drove half the gains. The narrowest rebound on record.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/flight-12.html">
+            <span class="landing-list-date">May 11, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Flight 12.</h2>
+              <p class="landing-list-summary">Block 3 (V3) first flight from Starbase OLP-2. The proof point ahead of June 2026 IPO.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/physical-ai.html">
+            <span class="landing-list-date">May 11, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Physical AI.</h2>
+              <p class="landing-list-summary">Robotics moves from R&D to deployment. WEF declares the foundational era over.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/the-ai-war.html">
+            <span class="landing-list-date">May 11, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">The AI War.</h2>
+              <p class="landing-list-summary">Beijing blocks Meta-Manus $2B deal. Two parallel AI stacks emerging at every layer.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/agentic.html">
+            <span class="landing-list-date">May 10, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Agentic.</h2>
+              <p class="landing-list-summary">The shift from generative to agentic AI is here. 78% of Fortune 500 already deploying.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/the-toolbox.html">
+            <span class="landing-list-date">May 9, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">The Toolbox.</h2>
+              <p class="landing-list-summary">ChatGPT loses 23 points of market share in 12 months. The chatbot market fragments.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/the-link.html">
+            <span class="landing-list-date">May 8, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">The Link.</h2>
+              <p class="landing-list-summary">Neuralink hits inflection point. 21 patients, $12.7B secondary valuation, sovereign wealth piling in.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/diverged.html">
+            <span class="landing-list-date">May 8, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Diverged.</h2>
+              <p class="landing-list-summary">The Mag 7 trade is dead. Four winners, three laggards. The basket has fractured.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/the-orchestrator.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">The Orchestrator.</h2>
+              <p class="landing-list-summary">Every major AI player runs on NVIDIA. The most important platform of this decade.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/groq.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Groq.</h2>
+              <p class="landing-list-summary">Groq wins enterprise inference. The training/inference split in AI compute.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/terafab.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Terafab.</h2>
+              <p class="landing-list-summary">Terafab and the U.S. chip fab build. The American semiconductor reindustrialization.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/xai-spacex.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">SpaceXai.</h2>
+              <p class="landing-list-summary">xAI and SpaceX combine. The most aggressive AI/space integration in private markets.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/aligned.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Aligned.</h2>
+              <p class="landing-list-summary">Anthropic and SpaceX align on a major compute deal — three months after Musk's public attack.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/reflection-ai.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Reflection.</h2>
+              <p class="landing-list-summary">Reflection AI builds autonomous coding agents. The AI software engineer is here.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/polymarket.html">
+            <span class="landing-list-date">May 7, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Polymarket.</h2>
+              <p class="landing-list-summary">Prediction markets become real markets. Polymarket's ascent and the predictive layer.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/rare-earth.html">
+            <span class="landing-list-date">May 6, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Rare Earth.</h2>
+              <p class="landing-list-summary">America's rare earth supply chain rebuild. Vulcan Elements is one of two domestic operators.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/starship.html">
+            <span class="landing-list-date">May 6, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Starship.</h2>
+              <p class="landing-list-summary">SpaceX raises $15B for Starship. The Mars architecture is funded.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/american-made.html">
+            <span class="landing-list-date">May 5, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">American Made.</h2>
+              <p class="landing-list-summary">The software-defined factory. Aerospace-grade parts manufactured at startup speed.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/arsenal.html">
+            <span class="landing-list-date">May 4, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Arsenal.</h2>
+              <p class="landing-list-summary">The new American defense prime. Software-first, vertically integrated, built at startup speed.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/cerebras-ipo.html">
+            <span class="landing-list-date">May 4, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Cerebras.</h2>
+              <p class="landing-list-summary">Cerebras files for IPO. The wafer-scale AI compute story comes to public markets.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/enha.html">
+            <span class="landing-list-date">May 3, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Day One.</h2>
+              <p class="landing-list-summary">Enhabit lists on NYSE. Home health and hospice scaling into public markets.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/trophy-assets.html">
+            <span class="landing-list-date">May 3, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Trophy Assets.</h2>
+              <p class="landing-list-summary">Blue Owl and the trophy assets thesis. Net-lease real estate to mission-critical tenants.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/cerebras-ipo-update.html">
+            <span class="landing-list-date">May 2, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">The Book.</h2>
+              <p class="landing-list-summary">Cerebras IPO pricing update. Order book mechanics and the bellwether read.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/firehawk-aerospace.html">
+            <span class="landing-list-date">May 1, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Firehawk.</h2>
+              <p class="landing-list-summary">Firehawk Aerospace builds hybrid propulsion for defense and launch. 3D-printed solid-liquid systems.</p>
+            </div>
+          </a>
+        </li>
+        <li class="landing-list-item">
+          <a href="posts/deployed.html">
+            <span class="landing-list-date">May 1, 2026</span>
+            <div class="landing-list-body">
+              <h2 class="landing-list-title">Deployed.</h2>
+              <p class="landing-list-summary">Seven of America's leading AI companies sign on to deploy frontier capabilities inside the Pentagon's classified networks.</p>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </main>
+
+    <footer class="landing-footer">
+      <a href="https://kochcapital.io">kochcapital.io</a>
+      <p class="landing-disclaimer">
+        Personal commentary. Not investment advice.<br>
+        Not an offer or solicitation.
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
