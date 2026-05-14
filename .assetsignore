@@ -1,34 +1,30 @@
-# Cloudflare asset exclusion list
+# Cloudflare Workers asset exclusion list
+# Uses Cloudflare's canonical pattern format with **/ prefix
 
-# CRITICAL — exclude all git internals (multiple pattern forms to be safe)
-.git
-.git/
-.git/**
-.gitignore
-.gitattributes
+# CRITICAL — exclude all git internals (this is what's breaking the build)
+**/.git
+**/.gitignore
+**/.gitattributes
 
 # Build/config files
-.assetsignore
-wrangler.jsonc
-package.json
-package-lock.json
-node_modules
-node_modules/
+**/.assetsignore
+**/wrangler.jsonc
+**/package.json
+**/package-lock.json
+**/node_modules
 
-# Source files
-site_generator.py
-__pycache__
-__pycache__/
-*.pyc
+# Source files (kept in repo, not deployed)
+**/site_generator.py
+**/__pycache__
+**/*.pyc
 
 # Documentation (kept in repo, not deployed)
-MANIFEST.md
-MANIFEST.txt
-README.md
+**/MANIFEST.md
+**/MANIFEST.txt
+**/README.md
+**/README-UPLOAD.txt
 
 # System cruft
-.DS_Store
-.vscode
-.vscode/
-.idea
-.idea/
+**/.DS_Store
+**/.vscode
+**/.idea
