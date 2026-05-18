@@ -1,0 +1,531 @@
+/* ============================================
+   FRONTIER-FIRST · Brand Styles
+   Single stylesheet shared across the site
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+html, body {
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Archivo', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.003em;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness 0.1s ease;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================
+   PAGE WRAPPER
+   ============================================ */
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 64px 32px 96px;
+}
+
+/* ============================================
+   BRAND BAR (top of every page)
+   ============================================ */
+
+.brand-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid #000;
+  margin-bottom: 48px;
+}
+
+.brand-bar .name-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.brand-bar .name {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-decoration: none;
+  line-height: 1;
+  display: block;
+}
+
+.brand-bar .name-sub {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #000;
+  display: block;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.brand-bar .name:hover {
+  text-decoration: none;
+}
+
+.brand-bar .meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.6;
+  text-align: right;
+  line-height: 1.6;
+}
+
+.brand-bar .meta small {
+  display: block;
+  font-weight: 300;
+}
+
+/* ============================================
+   ARTICLE PAGE
+   ============================================ */
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow .dot {
+  width: 7px;
+  height: 7px;
+  background: #000;
+  border-radius: 50%;
+}
+
+h1.title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(56px, 9vw, 112px);
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+  color: #000;
+  margin-bottom: 28px;
+}
+
+.dek {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: #000;
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.dek em {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.byline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.6;
+  padding: 18px 0;
+  border-top: 1.5px solid #000;
+  border-bottom: 1.5px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.byline .who {
+  font-weight: 700;
+  opacity: 1;
+  letter-spacing: 0.3em;
+}
+
+/* ============================================
+   BODY CONTENT
+   ============================================ */
+
+.body p {
+  font-size: 18px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.body p strong { font-weight: 700; }
+.body p em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05em;
+  letter-spacing: -0.005em;
+}
+
+.body h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 56px 0 20px;
+  color: #000;
+}
+
+.body h2 em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.body ul {
+  list-style: none;
+  margin: 0 0 32px;
+}
+
+.body ul li {
+  font-size: 17px;
+  line-height: 1.55;
+  padding: 14px 0 14px 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.body ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+}
+
+.body ul li strong {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   SLIDE IMAGES (carousel embeds)
+   ============================================ */
+
+figure.slide {
+  margin: 56px -16px;
+}
+
+figure.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1.5px solid #000;
+}
+
+figure.slide figcaption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.55;
+  padding-top: 14px;
+  text-align: center;
+}
+
+/* ============================================
+   PULL QUOTE
+   ============================================ */
+
+blockquote.pull {
+  margin: 64px 0;
+  padding: 36px 0;
+  border-top: 1.5px solid #000;
+  border-bottom: 1.5px solid #000;
+  text-align: center;
+}
+
+blockquote.pull .mark {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+blockquote.pull .text {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: #000;
+  margin: 0 auto 18px;
+  max-width: 680px;
+}
+
+blockquote.pull .who {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.7;
+}
+
+blockquote.pull .who strong {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  display: block;
+  margin-bottom: 6px;
+  color: #000;
+  opacity: 1;
+}
+
+/* ============================================
+   SOURCES & DISCLOSURE
+   ============================================ */
+
+.sources {
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1.5px solid #000;
+}
+
+.sources h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 18px;
+}
+
+.sources ol {
+  list-style: none;
+  counter-reset: src;
+}
+
+.sources ol li {
+  counter-increment: src;
+  font-size: 14px;
+  line-height: 1.55;
+  padding: 10px 0 10px 32px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.sources ol li::before {
+  content: counter(src, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.disclosure {
+  margin-top: 48px;
+  padding: 24px 28px;
+  background: #f6f6f6;
+  border: 1.5px solid #000;
+}
+
+.disclosure p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.disclosure p:last-child { margin-bottom: 0; }
+
+.disclosure p strong {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ============================================
+   POST FOOTER
+   ============================================ */
+
+.post-footer {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1.5px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.55;
+}
+
+.post-footer .signoff {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  opacity: 1;
+  color: #000;
+}
+
+/* ============================================
+   INDEX / ARCHIVE PAGE
+   ============================================ */
+
+.archive-intro {
+  margin-bottom: 64px;
+}
+
+.archive-intro h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.archive-intro p {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.3;
+  color: #000;
+  max-width: 680px;
+}
+
+.archive-intro p em { font-style: normal; }
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #000;
+  border: 1.5px solid #000;
+  background: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #000;
+  text-decoration: none;
+}
+
+.post-card .thumb {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #f0f0f0;
+  border-bottom: 1.5px solid #000;
+  display: block;
+}
+
+.post-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-card .meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.55;
+  padding: 16px 18px 8px;
+}
+
+.post-card h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 28px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #000;
+  padding: 0 18px 6px;
+}
+
+.post-card .summary {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #000;
+  padding: 0 18px 18px;
+  opacity: 0.85;
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width: 720px) {
+  .page { padding: 40px 18px 64px; }
+  figure.slide { margin: 32px -10px; }
+  blockquote.pull .mark { font-size: 48px; }
+  .archive-grid { grid-template-columns: 1fr; }
+}
