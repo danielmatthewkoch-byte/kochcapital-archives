@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — Frontier-first</title>
+<meta name="description" content="{{ONE-LINE DESCRIPTION, NO HTML}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<article class="page">
+
+  <!-- ============================================================= -->
+  <!-- DATE FIELD 1 of 4 — brand-bar (top-right). MUST equal slide build date MM.DD.26 -->
+  <header class="brand-bar">
+    <a href="../index.html" class="name">{{TITLE}}</a>
+    <div class="meta">Issue №026 · {{MM.DD.26}}<small>{{CATEGORY}} · Frontier-first</small></div>
+  </header>
+
+  <!-- DATE FIELD 2 of 4 — eyebrow. MUST equal slide build date MM.DD.26 -->
+  <div class="eyebrow"><span class="dot"></span><span>{{CATEGORY}} · {{KICKER}} · {{MM.DD.26}}</span></div>
+
+  <h1 class="title">{{TITLE}}</h1>
+  <p class="dek">{{Dek — 1–2 sentences, use <em>…</em> for emphasis on key figures.}}</p>
+
+  <!-- DATE FIELD 3 of 4 — byline ("blog date"). MUST equal the same date, long form. -->
+  <div class="byline">
+    <span>By <span class="who">KOCH. VC.</span></span>
+    <span>{{Month D, 2026}}</span>
+  </div>
+
+  <section class="body">
+
+    <!-- HERO slide -->
+    <figure class="slide">
+      <img src="../assets/{{prefix}}_01_hero.png" alt="{{TITLE}} — Slide 01">
+      <figcaption>Slide 01 · {{TITLE}}</figcaption>
+    </figure>
+
+    <h2>The <em>Lead</em>.</h2>
+    <p>{{Lead paragraph — the story in your own words. Figures live on the slides.}}</p>
+
+    <!-- Repeat one figure per inner slide (02 … n-1) -->
+    <figure class="slide">
+      <img src="../assets/{{prefix}}_02_xxxx.png" alt="{{TITLE}} — Slide 02">
+      <figcaption>Slide 02 · {{TITLE}}</figcaption>
+    </figure>
+
+    <!-- PULL QUOTE (from the final 'THE READ' slide) -->
+    <blockquote class="pull">
+      <div class="mark">"</div>
+      <div class="text">{{Short pull quote.<br>Two lines max."}}</div>
+      <div class="who"><strong>{{NAME}}</strong>{{Role · Org · MM.DD.26}}</div>
+    </blockquote>
+    <p style="font-style: italic; opacity: 0.8;">"{{Full quote.}}" — {{Name, Org}}.</p>
+
+    <!-- FINAL quote slide as a figure -->
+    <figure class="slide">
+      <img src="../assets/{{prefix}}_0N_quote.png" alt="{{TITLE}} — Slide 0N">
+      <figcaption>Slide 0N · {{TITLE}}</figcaption>
+    </figure>
+  </section>
+
+  <!-- DISCLOSURE — include ONLY if the subject/a named company is a 1789 holding. -->
+  <!-- See DISCLOSURE_RULES.md. Delete this whole block if not applicable. -->
+  <div class="disclosure">
+    <p><strong>Disclosure</strong></p>
+    <p>The author is a Limited Partner in 1789 Capital, which holds a position in {{Company}}. Personal commentary and editorial analysis. Not investment advice, not an offer or solicitation.</p>
+  </div>
+
+  <section class="sources">
+    <h3>Sources</h3>
+    <ol>
+      <li><a href="{{url}}" target="_blank" rel="noopener">{{Source}}</a></li>
+    </ol>
+  </section>
+
+  <footer class="post-footer">
+    <div class="signoff">— Frontier-first.</div>
+  </footer>
+
+</article>
+</body>
+</html>
+
+<!--
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  BEFORE PUBLISHING — the four dates must all equal the slide      │
+  │  build date (top-right of the hero slide):                        │
+  │    1. brand-bar meta   (MM.DD.26)                                 │
+  │    2. eyebrow          (MM.DD.26)                                 │
+  │    3. byline           (Month D, 2026)   ← the one that drifts     │
+  │    4. homepage entry in public/index.html (Month D, 2026)         │
+  │  See CHECKLIST.md.                                                │
+  └─────────────────────────────────────────────────────────────────┘
+-->
