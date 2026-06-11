@@ -1,673 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archives — Koch Capital</title>
-  <meta name="description" content="Frontier-first commentary from Koch Capital. AI, Minerals, Aerospace, Defense-Tech, Energy, Sports.">
-
-  <meta property="og:title" content="Archives — Koch Capital">
-  <meta property="og:description" content="Frontier-first commentary on AI, Minerals, Aerospace, Defense-Tech, Energy, and Sports.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://archives.kochcapital.io">
-  <meta property="og:image" content="https://archives.kochcapital.io/assets/og-image.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    body { background: #fff; color: #000; }
-
-    .landing-page {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 80px 32px 96px;
-    }
-
-    .landing-hero { text-align: center; }
-
-    .landing-logo {
-      width: 72px;
-      height: auto;
-      margin: 0 auto 40px;
-      display: block;
-    }
-
-    .landing-title {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: clamp(56px, 9vw, 96px);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-      margin: 0 0 20px;
-      color: #000;
-    }
-
-    .landing-tagline {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #888;
-      margin: 0 0 56px;
-    }
-
-    .landing-sectors {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 28px;
-      padding: 22px 0;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      margin-bottom: 72px;
-    }
-
-    .landing-list { list-style: none; padding: 0; margin: 0; }
-
-    .landing-list-item { border-bottom: 1px solid #e5e5e5; }
-    .landing-list-item:first-child { border-top: 1px solid #e5e5e5; }
-
-    .landing-list-item a {
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
-      padding: 26px 0;
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.15s ease, padding-left 0.15s ease;
-    }
-
-    .landing-list-item a:hover {
-      opacity: 0.6;
-      padding-left: 8px;
-    }
-
-    .landing-list-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888;
-      flex-shrink: 0;
-      width: 140px;
-      padding-top: 4px;
-    }
-
-    .landing-list-body {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .landing-list-title {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 22px;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: #000;
-      margin: 0 0 8px;
-    }
-
-    .landing-list-summary {
-      font-family: 'Archivo', system-ui, -apple-system, sans-serif;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 1.5;
-      color: #444;
-      margin: 0;
-      letter-spacing: -0.002em;
-    }
-
-    .landing-footer {
-      margin-top: 96px;
-      padding-top: 40px;
-      border-top: 1px solid #000;
-      text-align: center;
-    }
-
-    .landing-footer a {
-      font-family: 'Archivo', sans-serif;
-      font-size: 14px;
-      color: #000;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-    }
-
-    .landing-disclaimer {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-top: 28px;
-      line-height: 1.9;
-    }
-
-    @media (max-width: 640px) {
-      .landing-page { padding: 48px 20px 64px; }
-      .landing-logo { width: 56px; margin-bottom: 28px; }
-      .landing-tagline { font-size: 10px; letter-spacing: 0.25em; margin-bottom: 40px; }
-      .landing-sectors { font-size: 10px; letter-spacing: 0.15em; gap: 14px; padding: 16px 0; margin-bottom: 48px; }
-      .landing-list-item a { flex-direction: column; gap: 6px; padding: 22px 0; }
-      .landing-list-item a:hover { padding-left: 0; }
-      .landing-list-date { width: auto; font-size: 10px; padding-top: 0; }
-      .landing-list-title { font-size: 18px; margin-bottom: 6px; }
-      .landing-list-summary { font-size: 15px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="landing-page">
-
-    <header class="landing-hero">
-      <img src="assets/logo.png" alt="Koch Capital" class="landing-logo">
-      <h1 class="landing-title">ARCHIVES.</h1>
-      <p class="landing-tagline">Frontier-first commentary</p>
-    </header>
-
-    <div class="landing-sectors">
-      <span>AI</span>
-      <span>MINERALS</span>
-      <span>AEROSPACE</span>
-      <span>DEFENSE-TECH</span>
-      <span>ENERGY</span>
-      <span>SPORTS</span>
-    </div>
-
-    <!-- =========================================================
-         POST LIST — newest first
-         To add a new post: copy any <li> block, paste it at the
-         TOP of this list, edit the date, slug, title, and summary.
-         ========================================================= -->
-    <main>
-      <ul class="landing-list">
-        <li class="landing-list-item">
-          <a href="posts/starship-v3.html">
-            <span class="landing-list-date">May 22, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Starship.</h2>
-              <p class="landing-list-summary">The V3 era has begun. Flight 12 launched from new Pad 2, reached space, and deployed 22 satellites. The vehicle that will define SpaceX's $1.75T IPO just flew.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/plaid.html">
-            <span class="landing-list-date">May 22, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Plaid.</h2>
-              <p class="landing-list-summary">Plaid now powers both ChatGPT and Perplexity — the neutral rail letting AI assistants see, analyze, and manage your entire financial life. 1M new connections daily across 12,000+ institutions.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/quantum.html">
-            <span class="landing-list-date">May 22, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Quantum.</h2>
-              <p class="landing-list-summary">Washington is awarding $2 billion to nine quantum firms — and taking equity stakes in return. The most aggressive U.S. bet yet on winning the quantum race with China. PsiQuantum among the recipients.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/panthalassa.html">
-            <span class="landing-list-date">May 21, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Panthalassa.</h2>
-              <p class="landing-list-summary">Floating AI data centers powered entirely by ocean waves. No grid. No anchors. Peter Thiel just led a $140M round at a $1 billion valuation.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/stargate.html">
-            <span class="landing-list-date">May 21, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Stargate.</h2>
-              <p class="landing-list-summary">OpenAI's $500B megaproject hit 7 gigawatts ahead of schedule. But the financial model is wobbling — $1.4T in commitments against ~$20B revenue. The most ambitious bet in tech, and its first cracks.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/neocloud.html">
-            <span class="landing-list-date">May 21, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Neocloud.</h2>
-              <p class="landing-list-summary">A new asset class was born. Neoclouds rent GPU capacity to the AI labs — and reserved compute now trades like dark fiber. CoreWeave's backlog: $99.4 billion, up 284% YoY.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/jensen.html">
-            <span class="landing-list-date">May 21, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Jensen.</h2>
-              <p class="landing-list-summary">NVIDIA posted another record quarter: $81.6B revenue, up 85% YoY. Data center up 92%. Net income up 211%. Q2 guidance: $91B. The AI buildout shows no signs of slowing.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/spcx.html">
-            <span class="landing-list-date">May 20, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">SPCX.</h2>
-              <p class="landing-list-summary">SpaceX filed its S-1 — the first-ever look inside its books. $18.67B revenue, ~$8B profit, targeting a $1.75 trillion valuation and up to a $75B raise: the largest IPO in history. Ticker: SPCX.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/murati.html">
-            <span class="landing-list-date">May 20, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Murati.</h2>
-              <p class="landing-list-summary">Ex-OpenAI CTO Mira Murati unveiled “interaction models” — AI that listens while it talks — at Thinking Machines. A $50B valuation in talks, up 4× from $12B in July. A direct shot at OpenAI's most-deployed API.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/colossus.html">
-            <span class="landing-list-date">May 20, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Colossus.</h2>
-              <p class="landing-list-summary">Musk's Memphis megacluster scaled to 2 gigawatts and 555,000 GPUs. But the real story is power. Compute is no longer the bottleneck — electricity is.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/gemini.html">
-            <span class="landing-list-date">May 20, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Gemini.</h2>
-              <p class="landing-list-summary">Google I/O dropped Gemini 3.5 Flash, Omni video, and the Spark agent. 900 million monthly users across 230+ countries. The biggest AI assistant on Earth got bigger.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/polymarket-launch.html">
-            <span class="landing-list-date">May 19, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Polymarket.</h2>
-              <p class="landing-list-summary">Private-market pricing is unlocked. Polymarket launched live contracts on OpenAI, Anthropic, SpaceX, Databricks, and Anduril — with NASDAQ Private Market as the resolution oracle. $39B U.S. volume YTD.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/prometheus.html">
-            <span class="landing-list-date">May 19, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Prometheus.</h2>
-              <p class="landing-list-summary">Jeff Bezos closed a $10B round at a $38B valuation for Project Prometheus — total raised $16B+ in five months, the highest-valued sub-12-month-old startup ever. His first operational CEO role since Amazon.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/claude.html">
-            <span class="landing-list-date">May 18, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Claude.</h2>
-              <p class="landing-list-summary">Anthropic is in talks for a $30B round at a $900B+ valuation — tripling in three months and, for the first time, overtaking OpenAI ($852B). Revenue: a $44B+ run rate. Claude Code alone: $2.5B, up 80× in a year.</p>
-            </div>
-          </a>
-        </li>
-
-        <li class="landing-list-item">
-          <a href="posts/databricks.html">
-            <span class="landing-list-date">May 17, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Databricks.</h2>
-              <p class="landing-list-summary">Databricks stands alone as the only profitable name in the 2026 AI IPO pipeline. $134B valuation, $5.4B revenue run-rate, +65% growth, positive free cash flow, and 4th most valuable private company globally.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/chips.html">
-            <span class="landing-list-date">May 15, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Chips.</h2>
-              <p class="landing-list-summary">A comprehensive map of the $975B semiconductor industry: foundries (TSMC, Samsung, Intel), equipment (ASML), AI accelerators (NVIDIA, AMD, Broadcom, Cerebras), memory (SK Hynix, Micron), bottlenecks (CoWoS), and the Terafab reshoring play.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/data.html">
-            <span class="landing-list-date">May 15, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Data.</h2>
-              <p class="landing-list-summary">A definitive map of the AI data center stack — six layers from compute silicon through servers, memory, network, neoclouds, and energy. $725B in 2026 capex with a forward view to McKinsey's $6.7T 2030 projection.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/spacexai.html">
-            <span class="landing-list-date">May 15, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">SpaceXAI.</h2>
-              <p class="landing-list-summary">SpaceX confirmed its plan to debut on Nasdaq under ticker SPCX as early as June 12, 2026, at a $1.75 trillion valuation — what would be the largest IPO in history. Part 1 of the buildup trilogy.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/flight-12.html">
-            <span class="landing-list-date">May 15, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Flight 12.</h2>
-              <p class="landing-list-summary">Block 3 (V3) first flight from Starbase OLP-2. The proof point ahead of June 2026 IPO.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/cbrs-results.html">
-            <span class="landing-list-date">May 14, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">NASDAQ: CBRS. Results.</h2>
-              <p class="landing-list-summary">Cerebras delivered a +68% Day One pop, closing at $311.07 with a market cap of approximately $95B. Largest U.S. tech IPO since Uber (2019).</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/china.html">
-            <span class="landing-list-date">May 14, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">China.</h2>
-              <p class="landing-list-summary">Trump landed in Beijing with Musk, Huang, Cook. First U.S. presidential visit in nearly a decade. $1T CEO delegation. Xi opened with the Thucydides Trap.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/day-one.html">
-            <span class="landing-list-date">May 14, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Day One.</h2>
-              <p class="landing-list-summary">Cerebras priced at $185 — $25 above the already-raised range. $5.55B raised, $39.82B market cap. Trading today on Nasdaq under CBRS.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/orbit.html">
-            <span class="landing-list-date">May 13, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Orbit.</h2>
-              <p class="landing-list-summary">Google and SpaceX in advanced talks for orbital data centers, ahead of SpaceX's $1.75T IPO. The future of the data center.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/crusoe.html">
-            <span class="landing-list-date">May 13, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Crusoe.</h2>
-              <p class="landing-list-summary">Crusoe's rise as the leading energy-first AI infrastructure operator: $10B valuation, 45 GW pipeline, customers including OpenAI Stargate and Microsoft.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/peak.html">
-            <span class="landing-list-date">May 12, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Peak.</h2>
-              <p class="landing-list-summary">Cerebras IPO frenzy: $48.8B valuation, 20× oversubscribed, pricing May 13. The third post in the market-tension trilogy.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/palantir.html">
-            <span class="landing-list-date">May 12, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Palantir.</h2>
-              <p class="landing-list-summary">Palantir Q1 2026 print: $1.63B revenue (+85% YoY), $870M net income, Rule of 40 at 145. The strongest quarter since IPO.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/perplexity.html">
-            <span class="landing-list-date">May 12, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Perplexity.</h2>
-              <p class="landing-list-summary">Perplexity's shift from search engine to interface layer. $20B valuation, $450M ARR, 45M MAU, plus a $34.5B standing bid for Chrome.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/the-big-short-2.html">
-            <span class="landing-list-date">May 11, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">The Big Short 2.0.</h2>
-              <p class="landing-list-summary">Burry returns with a $1.1B short position and a Substack post comparing today to March 2000.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/new-highs.html">
-            <span class="landing-list-date">May 11, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">New Highs.</h2>
-              <p class="landing-list-summary">S&P 500 +10.49% in April, but five stocks drove half the gains. The narrowest rebound on record.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/physical-ai.html">
-            <span class="landing-list-date">May 11, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Physical AI.</h2>
-              <p class="landing-list-summary">Robotics moves from R&D to deployment. WEF declares the foundational era over.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/the-ai-war.html">
-            <span class="landing-list-date">May 11, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">The AI War.</h2>
-              <p class="landing-list-summary">Beijing blocks Meta-Manus $2B deal. Two parallel AI stacks emerging at every layer.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/agentic.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Agentic.</h2>
-              <p class="landing-list-summary">The shift from generative to agentic AI is here. 78% of Fortune 500 already deploying.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/the-toolbox.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">The Toolbox.</h2>
-              <p class="landing-list-summary">ChatGPT loses 23 points of market share in 12 months. The chatbot market fragments.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/the-link.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">The Link.</h2>
-              <p class="landing-list-summary">Neuralink hits inflection point. 21 patients, $12.7B secondary valuation, sovereign wealth piling in.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/diverged.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Diverged.</h2>
-              <p class="landing-list-summary">The Mag 7 trade is dead. Four winners, three laggards. The basket has fractured.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/the-orchestrator.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">The Orchestrator.</h2>
-              <p class="landing-list-summary">Every major AI player runs on NVIDIA. The most important platform of this decade.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/enha.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Enhanced.</h2>
-              <p class="landing-list-summary">Enhanced Group Inc. debuts on the NYSE under ENHA — a $1.2B SPAC listing. The Enhanced Games and a performance-medicine platform, weeks before the inaugural event.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/trophy-assets.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Trophy Assets.</h2>
-              <p class="landing-list-summary">Blue Owl and the trophy assets thesis. Net-lease real estate to mission-critical tenants.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/firehawk-aerospace.html">
-            <span class="landing-list-date">May 8, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Firehawk.</h2>
-              <p class="landing-list-summary">Firehawk Aerospace builds hybrid propulsion for defense and launch. 3D-printed solid-liquid systems.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/groq.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Groq.</h2>
-              <p class="landing-list-summary">Groq wins enterprise inference. The training/inference split in AI compute.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/terafab.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Terafab.</h2>
-              <p class="landing-list-summary">Terafab and the U.S. chip fab build. The American semiconductor reindustrialization.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/xai-spacex.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">SpaceXai.</h2>
-              <p class="landing-list-summary">xAI and SpaceX combine. The most aggressive AI/space integration in private markets.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/aligned.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Aligned.</h2>
-              <p class="landing-list-summary">Anthropic and SpaceX align on a major compute deal — three months after Musk's public attack.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/reflection-ai.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Reflection.</h2>
-              <p class="landing-list-summary">Reflection AI builds autonomous coding agents. The AI software engineer is here.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/polymarket.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Polymarket.</h2>
-              <p class="landing-list-summary">Prediction markets become real markets. Polymarket's ascent and the predictive layer.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/rare-earth.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Rare Earth.</h2>
-              <p class="landing-list-summary">America's rare earth supply chain rebuild. Vulcan Elements is one of two domestic operators.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/american-made.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">American Made.</h2>
-              <p class="landing-list-summary">The software-defined factory. Aerospace-grade parts manufactured at startup speed.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/arsenal.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Arsenal.</h2>
-              <p class="landing-list-summary">The new American defense prime. Software-first, vertically integrated, built at startup speed.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/cerebras-ipo-update.html">
-            <span class="landing-list-date">May 7, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">The Book.</h2>
-              <p class="landing-list-summary">Cerebras IPO pricing update. Order book mechanics and the bellwether read.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/starship.html">
-            <span class="landing-list-date">May 6, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Starship.</h2>
-              <p class="landing-list-summary">SpaceX raises $15B for Starship. The Mars architecture is funded.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/cerebras-ipo.html">
-            <span class="landing-list-date">May 4, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Cerebras.</h2>
-              <p class="landing-list-summary">Cerebras files for IPO. The wafer-scale AI compute story comes to public markets.</p>
-            </div>
-          </a>
-        </li>
-        <li class="landing-list-item">
-          <a href="posts/deployed.html">
-            <span class="landing-list-date">May 1, 2026</span>
-            <div class="landing-list-body">
-              <h2 class="landing-list-title">Deployed.</h2>
-              <p class="landing-list-summary">Seven of America's leading AI companies sign on to deploy frontier capabilities inside the Pentagon's classified networks.</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </main>
-
-    <footer class="landing-footer">
-      <a href="https://kochcapital.io">kochcapital.io</a>
-      <p class="landing-disclaimer">
-        Personal commentary. Not investment advice.<br>
-        Not an offer or solicitation.
-      </p>
-    </footer>
-
-  </div>
-</body>
-</html>
+￼
+ARCHIVES.
+FRONTIER-FIRST COMMENTARY
+AI
+MINERALS
+AEROSPACE
+DEFENSE-TECH
+ENERGY
+SPORTS
+		JUNE 11, 2026 Musk. Tonight SpaceX prices the largest IPO ever. Tomorrow it trades. Whatever the market decides, Musk still walks away holding the keys. Super-voting structure intact.  
+		JUNE 9, 2026 OpenAI. OpenAI confidentially filed for an IPO — pulling the most-watched company in AI toward public markets and open books. ~$852B implied. The race to print first.  
+		JUNE 9, 2026 SPV. Millions already "own" SpaceX — not through shares, but through SPVs. The IPO is about to test every one of those bets. The shadow cap table comes to light.  
+		JUNE 5, 2026 Apex. Apex just doubled its valuation to $2.3B — the satellite-bus maker chasing the orbital hardware behind Trump's Golden Dome. Production scale meets a national-security tailwind.  
+		JUNE 5, 2026 Risk-Off. A blowout jobs report flipped the Fed toward rate hikes — sparking a chip-led selloff. The AI trade rolled over with the broader tape.  
+		JUNE 4, 2026 Tokens. Ramp just raised $750M at a $44B valuation — nearly triple a year ago — showing how companies control their fastest-growing line item: AI tokens.  
+		JUNE 2, 2026 Codex. OpenAI's Codex is quietly becoming something bigger — a general-purpose work agent. 2M+ users. The centerpiece of the "superapp" OpenAI is building toward.  
+		JUNE 2, 2026 Roadshow. SpaceX takes the largest IPO in history on the road this week. Pitch opens June 4, pricing June 11, first trade June 12 — ticker SPCX. The $1.75T moment lands.  
+		JUNE 2, 2026 Light. AI's next bottleneck isn't the chip — it's the wire between chips. The industry is racing to move data on light instead of copper. Ayar Labs just raised $500M to do that.  
+		JUNE 2, 2026 Alphabet. Alphabet is selling $80B in stock to fund its AI buildout — its first equity raise since 2005, anchored by a $10B check from Warren Buffett's Berkshire Hathaway.  
+		JUNE 1, 2026 Starlab. The ISS retires by 2030. Its boldest successor — Starlab — launches the entire station in a single Starship flight. The orbital economy gets its anchor tenant.  
+		JUNE 1, 2026 Spark. Nvidia just declared war on the x86 PC. A Blackwell GPU and an Arm CPU on one superchip — for laptops. The DGX Spark moves the AI PC fight onto Intel and AMD's turf.  
+		JUNE 1, 2026 Dell. Dell's best day ever. Up 234% on the year. The "old PC company" just became the AI buildout's backbone — AI server demand vaulting it back to the top.  
+		JUNE 1, 2026 IPO. Anthropic confidentially filed a draft S-1 with the SEC — the first formal step toward what could be one of the largest tech listings ever. $965B post-money.  
+		MAY 31, 2026 Roundup. May 2026 — a month to remember. IPOs filed, records shattered. Twenty companies that moved the frontier — and one rocket that didn't make it.  
+		MAY 31, 2026 Anthropic. Anthropic closed a $65B Series H at a $965B post-money valuation — eclipsing OpenAI for the first time. The largest AI raise in history.  
+		MAY 29, 2026 Blue Origin. New Glenn exploded on its only orbital pad during a hotfire test. No injuries — but Bezos's heavy-lift program just took a serious hit weeks after a partial 2nd-stage failure.  
+		MAY 28, 2026 SaaS. Agentic AI is breaking the per-seat model that built a trillion-dollar industry. Software is being repriced from access to output — in real time.  
+		MAY 27, 2026 Robinhood. Robinhood just opened its platform to autonomous AI agents. The line from advisory to agentic — the one Plaid and Ramp were inching toward — got crossed today.  
+		MAY 26, 2026 Ramp. Ramp is in talks to raise $750M at a $40B+ valuation — its fifth step-up in 14 months. The AI-first fintech is pulling away from the entire pack.  
+		MAY 26, 2026 Micron. Micron just became the first memory chipmaker in history to cross $1 trillion. The stock popped 18% today as the AI trade broadens past the GPU.  
+		MAY 26, 2026 Orbit Economy. NASA is handing low Earth orbit to private industry. Four startups — Apex, K2, Axiom, Starlab — are building the hardware and habitats of the post-ISS era.  
+		MAY 22, 2026 Starship. The V3 era has begun. Flight 12 launched from new Pad 2, reached space, and deployed 22 satellites. The vehicle that will define SpaceX's $1.75T IPO just flew.  
+		MAY 22, 2026 Plaid. Plaid now powers both ChatGPT and Perplexity — the neutral rail letting AI assistants see, analyze, and manage your entire financial life. 1M new connections daily across 12,000+ institutions.  
+		MAY 22, 2026 Quantum. Washington is awarding $2 billion to nine quantum firms — and taking equity stakes in return. The most aggressive U.S. bet yet on winning the quantum race with China. PsiQuantum among the recipients.  
+		MAY 21, 2026 Panthalassa. Floating AI data centers powered entirely by ocean waves. No grid. No anchors. Peter Thiel just led a $140M round at a $1 billion valuation.  
+		MAY 21, 2026 Stargate. OpenAI's $500B megaproject hit 7 gigawatts ahead of schedule. But the financial model is wobbling — $1.4T in commitments against ~$20B revenue. The most ambitious bet in tech, and its first cracks.  
+		MAY 21, 2026 Neocloud. A new asset class was born. Neoclouds rent GPU capacity to the AI labs — and reserved compute now trades like dark fiber. CoreWeave's backlog: $99.4 billion, up 284% YoY.  
+		MAY 21, 2026 Jensen. NVIDIA posted another record quarter: $81.6B revenue, up 85% YoY. Data center up 92%. Net income up 211%. Q2 guidance: $91B. The AI buildout shows no signs of slowing.  
+		MAY 20, 2026 SPCX. SpaceX filed its S-1 — the first-ever look inside its books. $18.67B revenue, ~$4.9B net loss, targeting a $1.75 trillion valuation and up to a $75B raise: the largest IPO in history. Ticker: SPCX.  
+		MAY 20, 2026 Murati. Ex-OpenAI CTO Mira Murati unveiled "interaction models" — AI that listens while it talks — at Thinking Machines. A $50B valuation in talks, up 4× from $12B in July. A direct shot at OpenAI's most-deployed API.  
+		MAY 20, 2026 Colossus. Musk's Memphis megacluster scaled to 2 gigawatts and 555,000 GPUs. But the real story is power. Compute is no longer the bottleneck — electricity is.  
+		MAY 20, 2026 Gemini. Google I/O dropped Gemini 3.5 Flash, Omni video, and the Spark agent. 900 million monthly users across 230+ countries. The biggest AI assistant on Earth got bigger.  
+		MAY 19, 2026 Polymarket. Private-market pricing is unlocked. Polymarket launched live contracts on OpenAI, Anthropic, SpaceX, Databricks, and Anduril — with NASDAQ Private Market as the resolution oracle. $39B U.S. volume YTD.  
+		MAY 19, 2026 Prometheus. Jeff Bezos closed a $10B round at a $38B valuation for Project Prometheus — total raised $16B+ in five months, the highest-valued sub-12-month-old startup ever. His first operational CEO role since Amazon.  
+		MAY 18, 2026 Claude. Anthropic is in talks for a $30B round at a $900B+ valuation — tripling in three months and, for the first time, overtaking OpenAI ($852B). Revenue: a $44B+ run rate. Claude Code alone: $2.5B, up 80× in a year.  
+		MAY 17, 2026 Databricks. Databricks stands alone as the only profitable name in the 2026 AI IPO pipeline. $134B valuation, $5.4B revenue run-rate, +65% growth, positive free cash flow, and 4th most valuable private company globally.  
+		MAY 15, 2026 Chips. A comprehensive map of the $975B semiconductor industry: foundries (TSMC, Samsung, Intel), equipment (ASML), AI accelerators (NVIDIA, AMD, Broadcom, Cerebras), memory (SK Hynix, Micron), bottlenecks (CoWoS), and the Terafab reshoring play.  
+		MAY 15, 2026 Data. A definitive map of the AI data center stack — six layers from compute silicon through servers, memory, network, neoclouds, and energy. $725B in 2026 capex with a forward view to McKinsey's $6.7T 2030 projection.  
+		MAY 15, 2026 SpaceXAI. SpaceX confirmed its plan to debut on Nasdaq under ticker SPCX as early as June 12, 2026, at a $1.75 trillion valuation — what would be the largest IPO in history. Part 1 of the buildup trilogy.  
+		MAY 15, 2026 Flight 12. Block 3 (V3) first flight from Starbase OLP-2. The proof point ahead of June 2026 IPO.  
+		MAY 14, 2026 NASDAQ: CBRS. Results. Cerebras delivered a +68% Day One pop, closing at $311.07 with a market cap of approximately $95B. Largest U.S. tech IPO since Uber (2019).  
+		MAY 14, 2026 China. Trump landed in Beijing with Musk, Huang, Cook. First U.S. presidential visit in nearly a decade. $1T CEO delegation. Xi opened with the Thucydides Trap.  
+		MAY 14, 2026 Day One. Cerebras priced at $185 — $25 above the already-raised range. $5.55B raised, $39.82B market cap. Trading today on Nasdaq under CBRS.  
+		MAY 13, 2026 Orbit. Google and SpaceX in advanced talks for orbital data centers, ahead of SpaceX's $1.75T IPO. The future of the data center.  
+		MAY 13, 2026 Crusoe. Crusoe's rise as the leading energy-first AI infrastructure operator: $10B valuation, 45 GW pipeline, customers including OpenAI Stargate and Microsoft.  
+		MAY 12, 2026 Peak. Cerebras IPO frenzy: $48.8B valuation, 20× oversubscribed, pricing May 13. The third post in the market-tension trilogy.  
+		MAY 12, 2026 Palantir. Palantir Q1 2026 print: $1.63B revenue (+85% YoY), $870M net income, Rule of 40 at 145. The strongest quarter since IPO.  
+		MAY 12, 2026 Perplexity. Perplexity's shift from search engine to interface layer. $20B valuation, $450M ARR, 45M MAU, plus a $34.5B standing bid for Chrome.  
+		MAY 11, 2026 The Big Short 2.0. Burry returns with a $1.1B short position and a Substack post comparing today to March 2000.  
+		MAY 11, 2026 New Highs. S&P 500 +10.49% in April, but five stocks drove half the gains. The narrowest rebound on record.  
+		MAY 11, 2026 Physical AI. Robotics moves from R&D to deployment. WEF declares the foundational era over.  
+		MAY 11, 2026 The AI War. Beijing blocks Meta-Manus $2B deal. Two parallel AI stacks emerging at every layer.  
+		MAY 8, 2026 Agentic. The shift from generative to agentic AI is here. 78% of Fortune 500 already deploying.  
+		MAY 8, 2026 The Toolbox. ChatGPT loses 23 points of market share in 12 months. The chatbot market fragments.  
+		MAY 8, 2026 The Link. Neuralink hits inflection point. 21 patients, $12.7B secondary valuation, sovereign wealth piling in.  
+		MAY 8, 2026 Diverged. The Mag 7 trade is dead. Four winners, three laggards. The basket has fractured.  
+		MAY 8, 2026 The Orchestrator. Every major AI player runs on NVIDIA. The most important platform of this decade.  
+		MAY 8, 2026 Enhanced. Enhanced Group Inc. debuts on the NYSE under ENHA — a $1.2B SPAC listing. The Enhanced Games and a performance-medicine platform, weeks before the inaugural event.  
+		MAY 8, 2026 Trophy Assets. Blue Owl and the trophy assets thesis. Net-lease real estate to mission-critical tenants.  
+		MAY 8, 2026 Firehawk. Firehawk Aerospace builds hybrid propulsion for defense and launch. 3D-printed solid-liquid systems.  
+		MAY 7, 2026 Groq. Groq wins enterprise inference. The training/inference split in AI compute.  
+		MAY 7, 2026 Terafab. Terafab and the U.S. chip fab build. The American semiconductor reindustrialization.  
+		MAY 7, 2026 SpaceXai. xAI and SpaceX combine. The most aggressive AI/space integration in private markets.  
+		MAY 7, 2026 Aligned. Anthropic and SpaceX align on a major compute deal — three months after Musk's public attack.  
+		MAY 7, 2026 Reflection. Reflection AI builds autonomous coding agents. The AI software engineer is here.  
+		MAY 7, 2026 Polymarket. Prediction markets become real markets. Polymarket's ascent and the predictive layer.  
+		MAY 7, 2026 Rare Earth. America's rare earth supply chain rebuild. Vulcan Elements is one of two domestic operators.  
+		MAY 7, 2026 American Made. The software-defined factory. Aerospace-grade parts manufactured at startup speed.  
+		MAY 7, 2026 Arsenal. The new American defense prime. Software-first, vertically integrated, built at startup speed.  
+		MAY 7, 2026 The Book. Cerebras IPO pricing update. Order book mechanics and the bellwether read.  
+		MAY 6, 2026 Starship. SpaceX raises $15B for Starship. The Mars architecture is funded.  
+		MAY 4, 2026 Cerebras. Cerebras files for IPO. The wafer-scale AI compute story comes to public markets.  
+		MAY 1, 2026 Deployed. Seven of America's leading AI companies sign on to deploy frontier capabilities inside the Pentagon's classified networks.  
+kochcapital.io
+PERSONAL COMMENTARY. NOT INVESTMENT ADVICE. NOT AN OFFER OR SOLICITATION. 
